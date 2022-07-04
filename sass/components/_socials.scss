@@ -1,0 +1,52 @@
+.social {
+  display: flex;
+  justify-content: center;
+  @extend %list;
+}
+
+.social__item {
+  width: 44px;
+  height: 44px;
+}
+
+.social__item--right {
+  margin-right: 10px;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.social__link {
+  @include centerFlex();
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.social__link--team {
+  color: #afb1b8;
+  background-color: var(--main-background-color);
+  @include animation(color);
+  @include animation(background-color);
+
+  &:hover,
+  &:focus {
+    color: var(--main-background-color);
+    background-color: var(--accent-color);
+  }
+}
+
+.social__link--footer {
+  color: var(--main-background-color);
+  background-color: rgba(255, 255, 255, 0.1);
+  @include animation(background-color);
+
+  &:hover,
+  &:focus {
+    background-color: var(--accent-color);
+  }
+}
+
+.social__icon {
+  fill: currentColor;
+}

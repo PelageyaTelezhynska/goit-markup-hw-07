@@ -1,0 +1,115 @@
+.footer {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: #2f303a;
+}
+
+.footer__wrap {
+  display: flex;
+  align-items: baseline;
+}
+
+.footer__logo {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.footer__logo--white {
+  color: var(--main-background-color);
+}
+
+.address__list {
+  @extend %list;
+}
+
+.address__item:not(:last-child) {
+  margin-bottom: 9px;
+}
+
+.address__link {
+  display: flex;
+  @include font(14px, 1.71);
+  font-style: normal;
+  color: var(--main-background-color);
+  text-decoration: none;
+  transform: translateY(0) scale(1);
+  @include animation(transform);
+  @include animation(color);
+
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+    transform: translateY(-2px) scale(1.05);
+  }
+}
+
+.address__link--grey {
+  color: rgba(255, 255, 255, 0.6);
+  @include animation(color);
+
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+  }
+}
+
+.join-soc {
+  margin-left: 70px;
+}
+.join-soc__title {
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--main-background-color);
+}
+
+.subscribe {
+  margin-left: auto;
+}
+
+.subscribe__title {
+  margin-bottom: 20px;
+  font-weight: 700;
+  @include font(14px, 1.14);
+  text-transform: uppercase;
+  color: var(--main-background-color);
+}
+
+.subscribe__wrap {
+  display: flex;
+  align-items: center;
+}
+
+.subscribe__field {
+  padding-left: 16px;
+  margin-right: 12px;
+  width: 358px;
+  height: 50px;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  background-color: transparent;
+  @include font(16px, 1.25);
+  color: rgb(255, 255, 255);
+
+  &::placeholder {
+    @include font(16px, 1.25);
+    color: rgb(255, 255, 255);
+  }
+
+  &:focus {
+    outline: 1px solid rgba(255, 255, 255, 0.3);
+  }
+}
+
+.subscribe__btn {
+  @include centerFlex();
+}
+
+.subscribe__icon {
+  margin-left: 10px;
+}

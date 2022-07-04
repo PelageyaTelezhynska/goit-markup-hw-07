@@ -1,0 +1,172 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  @include animation(opacity);
+  @include animation(visibility);
+  background-color: rgba(0, 0, 0, 0.2);
+
+  &.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    .modal {
+      transform: translate(-50%, -50%) rotate(360deg) scale(0);
+    }
+  }
+}
+
+.modal {
+  padding: 40px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  @include animation(transform);
+  width: 528px;
+  min-height: 581px;
+  background-color: var(--main-background-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  @include centerFlex();
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.modal-text {
+  margin-bottom: 12px;
+  font-weight: 700;
+  @include font(20px, 1.15);
+  text-align: center;
+  color: var(--title-color);
+}
+
+.modal-field + .modal-field {
+  margin-top: 10px;
+}
+
+.input-wrap {
+  position: relative;
+}
+
+.modal-label {
+  display: block;
+  margin-bottom: 4px;
+  @include font(12px, 1.17, 0.01em);
+}
+
+.modal-input {
+  padding-left: 42px;
+  width: 100%;
+  height: 40px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  outline: transparent;
+  border-radius: 4px;
+  background-color: transparent;
+  @include animation(border-color);
+  @include animation(outline);
+
+  &:focus {
+    outline: 1px solid var(--accent-color);
+    border-color: var(--accent-color);
+  }
+}
+
+.input-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  fill: var(--title-color);
+  @include animation(fill);
+
+  .modal-input:focus + & {
+    fill: var(--accent-color);
+  }
+}
+
+.comment-textarea {
+  resize: none;
+  width: 100%;
+  height: 120px;
+  padding: 12px 16px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  background-color: transparent;
+  @include animation(border-color);
+  @include animation(outline);
+
+  &::placeholder {
+    @include font(14px, 1.14, 0.01em);
+    color: rgba(117, 117, 117, 0.5);
+  }
+
+  &:focus {
+    outline: 1px solid var(--accent-color);
+    border-color: var(--accent-color);
+  }
+}
+
+.checkbox {
+  margin-top: 20px;
+}
+
+.policy-label {
+  @include centerFlex();
+  @include font(14px, 1.71);
+  color: #757575;
+
+  span {
+    margin-right: 7px;
+    width: 16px;
+    height: 15px;
+    border: 1px solid var(--title-color);
+    border-radius: 2px;
+    @include animation(background-color);
+    @include animation(border);
+  }
+}
+
+.policy-input--visually-hidden {
+  @extend %visually-hidden;
+}
+
+.policy-input:checked + .policy-label span {
+  background-color: var(--accent-color);
+  border: none;
+}
+
+.policy-icon {
+  @include centerFlex(block);
+}
+
+.policy-link {
+  text-decoration: underline;
+  cursor: pointer;
+  color: var(--accent-color);
+}
+
+.modal-btn {
+  margin-top: 30px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
