@@ -81,13 +81,12 @@
   padding: 63px 24px;
   background-color: rgba(33, 150, 243, 0.9);
   @include font(18px, 1.56);
+  @include animation(transform);
   color: var(--main-background-color);
 
   .examples__item:hover & {
     transform: translateY(0);
   }
-
-  @include animation(transform);
 
   &::-webkit-scrollbar {
     width: 12px;
