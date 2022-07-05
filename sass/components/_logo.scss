@@ -5,9 +5,9 @@
   font-weight: 700;
   @include font(26px, 1.19);
   text-decoration: none;
-  @include animation(color);
-  @include animation(transform);
   transform: translate(0px) scale(1);
+  @include animation(color, transform);
+  // @include animation(transform);
 
   &:hover,
   &:focus {

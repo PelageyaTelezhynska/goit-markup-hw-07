@@ -16,7 +16,7 @@
   text-align: center;
   letter-spacing: 0.06em;
   cursor: pointer;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  @include animation(background-color);
 
   &:hover, &:focus {
   background-color: #188ce8;

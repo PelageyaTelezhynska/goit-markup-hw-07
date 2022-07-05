@@ -33,8 +33,7 @@
   color: var(--main-background-color);
   text-decoration: none;
   transform: translateY(0) scale(1);
-  @include animation(transform);
-  @include animation(color);
+  @include animation(transform, color);
 
   &:hover,
   &:focus {

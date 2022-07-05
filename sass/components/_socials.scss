@@ -26,8 +26,7 @@
 .social__link--team {
   color: #afb1b8;
   background-color: var(--main-background-color);
-  @include animation(color);
-  @include animation(background-color);
+  @include animation(color, background-color);
 
   &:hover,
   &:focus {

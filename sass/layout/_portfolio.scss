@@ -30,9 +30,7 @@
   @include font(16px, 1.63);
   text-align: center;
   cursor: pointer;
-  @include animation(color);
-  @include animation(box-shadow);
-  @include animation(background-color);
+  @include animation(color, box-shadow, background-color);
 
   &:hover,
   &:focus {
@@ -56,9 +54,6 @@
   margin-top: 30px;
   flex-basis: calc(100% / 3 - 30px);
   outline: 1px solid #eeeeee;
-  &:hover .examples__description {
-    transform: translateY(0);
-  }
 }
 
 .examples__link {
@@ -81,13 +76,18 @@
   position: absolute;
   transform: translateY(101%);
   overflow: auto;
-  @include animation(translateY);
   width: 100%;
   height: 100%;
   padding: 63px 24px;
   background-color: rgba(33, 150, 243, 0.9);
   @include font(18px, 1.56);
   color: var(--main-background-color);
+
+  .examples__item:hover & {
+    transform: translateY(0);
+  }
+
+  @include animation(transform);
 
   &::-webkit-scrollbar {
     width: 12px;

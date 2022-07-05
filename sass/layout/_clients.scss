@@ -30,11 +30,11 @@
   border: 1px solid #afb1b8;
   border-radius: 4px;
   color: #afb1b8;
-  @include animation(color);
+  @include animation(color, border-color);
 
   &:hover,
   &:focus {
-    border: 1px solid var(--accent-color);
+    border-color: var(--accent-color);
     color: var(--accent-color);
   }
 }
